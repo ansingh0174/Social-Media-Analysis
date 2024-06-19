@@ -14,10 +14,6 @@ We appreciate and encourage responsible disclosure of security vulnerabilities. 
 
 5. **Public disclosure** of the vulnerability will occur after a fix has been fully deployed and made available to all affected versions.
 
-## Scope
-
-This security policy applies to vulnerabilities discovered in this repository. Other issues should be reported to our regular [issue tracker](https://github.com/example/project/issues).
-
 ## Exclusions
 
 While we appreciate all vulnerability reports, please note that the following are excluded from the scope of this policy:
