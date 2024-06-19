@@ -11,7 +11,7 @@ import seaborn as sns
 
 st.set_page_config(layout="wide")
 
-kaggle_df = pd.read_csv('/Users/ankitsingh/Downloads/sentiment.csv', encoding='latin1')
+kaggle_df = pd.read_csv('sentiment.csv', encoding='latin1')
 kaggle_df = kaggle_df[['text', 'sentiment']].dropna()
 label_mapping = {'positive': 1, 'negative': 0, 'neutral': 2}
 kaggle_df['sentiment'] = kaggle_df['sentiment'].map(label_mapping)
