@@ -2,4 +2,6 @@ streamlit
 requests
 pandas
 scikit-learn
+matplotlib
+seaborn
 emoji
