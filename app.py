@@ -14,6 +14,7 @@ st.set_page_config(layout="wide")
 kaggle_df = pd.read_csv('sentiment.csv', encoding='latin1')
 kaggle_df = kaggle_df[['text', 'sentiment']].dropna()
 label_mapping = {'positive': 1, 'negative': 0, 'neutral': 2}
+reverse_label_mapping = {1: 'positive', 0: 'negative', 2: 'neutral'}
 kaggle_df['sentiment'] = kaggle_df['sentiment'].map(label_mapping)
 kaggle_df = kaggle_df.dropna()
 
@@ -51,7 +52,7 @@ def extract_comments(data):
 def perform_sentiment_analysis(comment_texts):
     X_new = vectorizer.transform(comment_texts)
     predicted_sentiments = model.predict(X_new)
-    return [1 if sentiment == 1 else 0 for sentiment in predicted_sentiments]
+    return [reverse_label_mapping[sentiment] for sentiment in predicted_sentiments]
 
 def evaluate_model(y_test, y_pred):
     accuracy = accuracy_score(y_test, y_pred)
