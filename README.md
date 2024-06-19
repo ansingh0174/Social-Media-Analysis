@@ -52,11 +52,15 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-**Developer Information**
+### Developer Information
 
 - **Name**: Ankit Kumar Singh
 - **UID**: 22BCS10416
 - **Institution**: Chandigarh University
 - **Department**: Computer Science Engineering, 3rd Year
 
-This project was created as part of the partial fulfilment of a 6-week summer training program.
+This project was created as part of the partial fulfillment of a 6-week summer training program.
+
+### Dataset Credit
+
+The sentiment analysis model was trained using a dataset sourced from Kaggle. Credits to the original dataset creators can be found [here](https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=train.csv).
