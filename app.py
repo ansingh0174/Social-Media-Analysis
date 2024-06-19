@@ -14,7 +14,7 @@ st.set_page_config(layout="wide")
 kaggle_df = pd.read_csv('sentiment.csv', encoding='latin1')
 kaggle_df = kaggle_df[['text', 'sentiment']].dropna()
 label_mapping = {'positive': 1, 'negative': 0, 'neutral': 2}
-reverse_label_mapping = {1: 'positive', 0: 'negative', 2: 'neutral'}
+reverse_label_mapping = {1: 'Positive', 0: 'Negative', 2: 'Neutral'}
 kaggle_df['sentiment'] = kaggle_df['sentiment'].map(label_mapping)
 kaggle_df = kaggle_df.dropna()
 
