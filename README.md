@@ -7,7 +7,6 @@ This is a Streamlit-based web application that performs sentiment analysis on Fa
 - Fetch comments from a Facebook page using the Graph API
 - Perform sentiment analysis on the comments using a pre-trained logistic regression model
 - Display the sentiment analysis results in a table
-- Provide model performance metrics (accuracy, F1-score, precision, recall)
 - Visualize the sentiment distribution of the analyzed comments
 
 ## Prerequisites
