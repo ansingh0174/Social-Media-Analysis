@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score
 from sklearn.model_selection import train_test_split
 
 def load_model():
@@ -20,7 +21,7 @@ def load_model():
     model = LogisticRegression(max_iter=1000)
     model.fit(X_train, y_train)
 
-    return model, vectorizer, reverse_label_mapping
+    return model, vectorizer, reverse_label_mapping, X_test, y_test
 
 def perform_sentiment_analysis(comment_texts, model, vectorizer, reverse_label_mapping):
     X_new = vectorizer.transform(comment_texts)

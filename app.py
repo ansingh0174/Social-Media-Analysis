@@ -1,8 +1,8 @@
 import streamlit as st
+import pandas as pd
 from facebook_api import fetch_facebook_posts, extract_comments
 from model import load_model, perform_sentiment_analysis, evaluate_model
 from visualization import visualize_sentiment_distribution
-import pandas as pd
 
 st.set_page_config(layout="wide")
 
@@ -19,13 +19,16 @@ def main():
     if submit_button and page_id and access_token:
         data = fetch_facebook_posts(page_id, access_token)
         comment_texts, post_ids = extract_comments(data)
-        model, vectorizer, reverse_label_mapping = load_model()
+        model, vectorizer, reverse_label_mapping, X_test, y_test = load_model()
         predicted_sentiments = perform_sentiment_analysis(comment_texts, model, vectorizer, reverse_label_mapping)
         results_df = pd.DataFrame({
             'Post ID': post_ids,
             'Comment': comment_texts,
             'Predicted Sentiment': predicted_sentiments
         })
+
+        y_pred = model.predict(X_test)
+        accuracy, f1, precision, recall = evaluate_model(y_test, y_pred)
 
         with left_column:
             st.write("Sentiment analysis results:")
@@ -36,6 +39,13 @@ def main():
                 "facebook_comments_sentiment.csv",
                 "text/csv"
             )
+            
+            st.write("Model Evaluation Metrics:")
+            metrics_df = pd.DataFrame({
+                'Metric': ['Accuracy', 'F1 Score', 'Precision', 'Recall'],
+                'Value': [accuracy, f1, precision, recall]
+            })
+            st.table(metrics_df)
 
         with right_column:
             visualize_sentiment_distribution(results_df)
