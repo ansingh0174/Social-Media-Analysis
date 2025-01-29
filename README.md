@@ -54,11 +54,7 @@ This project is licensed under the [MIT License](LICENSE).
 ### Developer Information
 
 - **Name**: Ankit Kumar Singh
-- **UID**: 22BCS10416
-- **Institution**: Chandigarh University
-- **Department**: Computer Science Engineering, 3rd Year
-
-This project was created as part of the partial fulfillment of a 6-week summer training program.
+- **Email**: [ansingh0174@gmail.com](ansingh0174@gmail.com)
 
 ### Dataset Credit
 
